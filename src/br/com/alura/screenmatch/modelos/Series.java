@@ -1,46 +1,45 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Series extends Title{
-    //region Properties
-    private int seasons;
-    private boolean active;
-    private int episodeperSeason;
-    private int minutesPerEpisode;
+public class Series extends Title {
+    private int temporadas;
+    private boolean ativa;
+    private int episodiosPorTemporada;
+    private int minutosPorEpisodio;
 
-    //endregion
-
-    //region getters and setters
-    public void setSeasons(int seasons) {
-        this.seasons = seasons;
-    }
-    public int getSeasons() {
-        return seasons;
+    public int getTemporadas() {
+        return temporadas;
     }
 
-    public boolean isActive() {
-        return active;
+    public void setTemporadas(int temporadas) {
+        this.temporadas = temporadas;
     }
 
-    public int getEpisodeperSeason() {
-        return episodeperSeason;
-    }
-    public void setEpisodeperSeason(int episodeperSeason) {
-        this.episodeperSeason = episodeperSeason;
+    public boolean isAtiva() {
+        return ativa;
     }
 
-    public int getMinutesPerEpisode() {
-        return minutesPerEpisode;
+    public void setAtiva(boolean ativa) {
+        this.ativa = ativa;
     }
 
-    public void setMinutesPerEpisode(int minutesPerEpisode) {
-        this.minutesPerEpisode = minutesPerEpisode;
+    public int getEpisodiosPorTemporada() {
+        return episodiosPorTemporada;
+    }
+
+    public void setEpisodiosPorTemporada(int episodiosPorTemporada) {
+        this.episodiosPorTemporada = episodiosPorTemporada;
+    }
+
+    public int getMinutosPorEpisodio() {
+        return minutosPorEpisodio;
+    }
+
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
+        this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
     @Override
-    public int getDuracaoMinutos() {
-        return seasons * episodeperSeason * minutesPerEpisode;
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
-
-    //endregion
-
 }

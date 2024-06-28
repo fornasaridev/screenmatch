@@ -1,64 +1,60 @@
 package br.com.alura.screenmatch.modelos;
 
 public class Title {
-    //region properties
-    private String name;
-    private int launchYear;
-    private boolean planIncluded;
-    private double somaAvaliacao;
-    private int totalAvaliacoes;
-    private String sinopsis;
-    private int duracaoMinutos;
-    //endregion
+    private String nome;
+    private int anoDeLancamento;
+    private boolean incluidoNoPlano;
+    private double somaDasAvaliacoes;
+    private int totalDeAvaliacoes;
+    private int duracaoEmMinutos;
 
-    //region getters and setters
-    public int getDuracaoMinutos() {
-        return duracaoMinutos;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDuracaoMinutos(int duracaoMinutos) {
-        this.duracaoMinutos = duracaoMinutos;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
     }
 
-    public void setLaunchYear(int launchYear) {
-        this.launchYear = launchYear;
-
-    }
-    public void setPlanIncluded(boolean planIncluded) {
-        this.planIncluded = planIncluded;
-    }
-    public void setSinopsis(String sinopsis) {
-        this.sinopsis = sinopsis;
+    public boolean isIncluidoNoPlano() {
+        return incluidoNoPlano;
     }
 
-
-    int getTotalAvaliacoes() {
-        return totalAvaliacoes;
-    }
-    //endregion
-
-    //region methods
-    public void avalia(double nota) {
-        somaAvaliacao += nota;
-        totalAvaliacoes++;
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
     }
 
-    public double mediaAvaliacao() {
-        return somaAvaliacao / totalAvaliacoes;
+    public int getTotalDeAvaliacoes() {
+        return totalDeAvaliacoes;
     }
 
-    public void exibeFichaTecnica() {
-        System.out.println("Name: " + name);
-        System.out.println("Launch Year: " + launchYear);
-        System.out.println("Plan Included: " + planIncluded);
-        System.out.println("Rating: " + somaAvaliacao);
-        System.out.println("Rating Total: " + totalAvaliacoes);
-        System.out.println("Sinopsis: " + sinopsis);
-
+    public void setNome(String nome) {
+        this.nome = nome;
     }
-    //endregion
 
+    public void setAnoDeLancamento(int anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public void exibeFichaTecnica(){
+        System.out.println("Nome do filme: " + nome);
+        System.out.println("Ano de lançamento: " + anoDeLancamento);
+    }
+
+    public void avalia(double nota){
+        somaDasAvaliacoes += nota;
+        totalDeAvaliacoes++;
+    }
+
+    public double pegaMedia(){
+        return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
 }

@@ -1,12 +1,10 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Film extends Title {
-    //region Properties
+import br.com.alura.screenmacth.calculos.Classificavel;
+
+public class Film extends Title implements Classificavel {
     private String diretor;
 
-    //endregion
-
-    //region getters and setters
     public String getDiretor() {
         return diretor;
     }
@@ -14,7 +12,9 @@ public class Film extends Title {
     public void setDiretor(String diretor) {
         this.diretor = diretor;
     }
-    //endregion
 
+    @Override
+    public int getClassificacao() {
+        return (int) pegaMedia() / 2;
+    }
 }
-
