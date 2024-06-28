@@ -1,19 +1,15 @@
 import br.com.alura.screenmatch.modelos.Film;
+import br.com.alura.screenmatch.modelos.Series;
 
 public class Main {
     public static void main(String[] args) {
 
-        Film film = new Film();
-        film.setName("The Godfather");
-        film.setLaunchYear(1972);
-        film.setPlanIncluded(true);
-        film.setSinopsis("The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.");
-
-        film.avalia(9.5);
-        film.avalia(5);
-        film.avalia(10);
-        film.avalia(10);
-        film.exibeFichaTecnica();
-        System.out.println(film.mediaAvaliacao());
+        Series lost = new Series();
+        lost.setName("Lost");
+        lost.setLaunchYear(2000);
+        lost.exibeFichaTecnica();
+        lost.setSeasons(10);
+        lost.setMinutesPerEpisode(50);
+        System.out.println("Duration in minutes: " + lost.getDuracaoMinutos());
     }
 }
