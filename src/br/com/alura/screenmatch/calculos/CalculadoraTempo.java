@@ -1,4 +1,4 @@
-package br.com.alura.screenmacth.calculos;
+package br.com.alura.screenmatch.calculos;
 import br.com.alura.screenmatch.modelos.Film;
 import br.com.alura.screenmatch.modelos.Series;
 import br.com.alura.screenmatch.modelos.Title;

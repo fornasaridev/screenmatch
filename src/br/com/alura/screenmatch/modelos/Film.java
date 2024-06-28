@@ -1,9 +1,13 @@
 package br.com.alura.screenmatch.modelos;
 
-import br.com.alura.screenmacth.calculos.Classificavel;
+import br.com.alura.screenmatch.calculos.Classificavel;
 
 public class Film extends Title implements Classificavel {
     private String diretor;
+
+    public Film(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
 
     public String getDiretor() {
         return diretor;
@@ -16,5 +20,10 @@ public class Film extends Title implements Classificavel {
     @Override
     public int getClassificacao() {
         return (int) pegaMedia() / 2;
+    }
+
+    @Override
+    public String toString() {
+        return "Filme:" + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
     }
 }
