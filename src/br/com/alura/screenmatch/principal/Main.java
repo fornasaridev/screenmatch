@@ -6,7 +6,10 @@ import br.com.alura.screenmatch.modelos.Episodios;
 import br.com.alura.screenmatch.modelos.Film;
 import br.com.alura.screenmatch.modelos.Series;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 
 public class Main {
@@ -42,12 +45,15 @@ public class Main {
         ArrayList<Film> listadefilmes = new ArrayList<>();
         listadefilmes.add(filmedoPaulo);
         listadefilmes.add(godfather);
+
         System.out.println("Tamanho da Lista: " + listadefilmes.size());
         System.out.println("Nome do filme: " + listadefilmes.get(0).getNome());
         System.out.println("toString: " + listadefilmes.get(0).toString());
         System.out.println(listadefilmes.toString());
 
 
+        listadefilmes.sort(Comparator.comparing(Film::getNome));
+        System.out.println(listadefilmes.toString());
 
 
 
